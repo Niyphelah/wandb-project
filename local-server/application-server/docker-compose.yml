@@ -1,0 +1,13 @@
+name: wandb
+services:
+    local:
+        environment:
+            - HOST=https://wandb.incorrigible.me
+            - LICENSE=LICENSE_REDACTED
+            - BUCKET=s3://REDACTED:REDACTED@192.168.40.215:9000/wandb
+            - BUCKET_QUEUE=internal://
+            - MYSQL=mysql://wandb_local:PASSWORD_REDACTED@192.168.40.210:3306/wandb_local
+        ports:
+            - 8080:8080
+        container_name: wandb-local
+        image: wandb/local
